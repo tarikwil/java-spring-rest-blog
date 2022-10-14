@@ -20,9 +20,12 @@ public class Author {
     private String lastname;
     private String username;
     private String password;
+    @OneToMany
+    List<Post> posts;
 
     public Author() {
         super();
+        posts = new ArrayList<>();
     }
 
     public Author(String username, String firstname, String lastname, String password) {
@@ -85,10 +88,10 @@ public class Author {
     }
 
     public List<Post> getPosts() {
-        return null;
+        return posts;
     }
 
     public void addPost(Post post) {
-        return;
+        posts.add(post);
     }
 }
